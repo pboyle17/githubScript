@@ -7,7 +7,9 @@ read projectname
 echo Ok, going to go ahead and create that repo at github
 
 curl -u $username https://api.github.com/user/repos -d '{"name":"'$projectname'"}'
-echo make sure you initialze your git remote with: git remote add origin $username@github.com/$username/$projectname.git
+$username@github.com/$username/$projectname.git
+touch readme.md
+echo "This file was created automatically by pboyle17's github command line repo initialization script" >> readme.md
 git init
 git add .
 git commit -m 'intialze the repo'
